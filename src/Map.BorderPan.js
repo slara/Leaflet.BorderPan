@@ -5,6 +5,7 @@
 L.Map.mergeOptions({
     borderpan: true,
     borderPanOffset: 300,
+    borderWidth: 50
 });
 
 L.Map.BorderPan = L.Handler.extend({
@@ -12,7 +13,6 @@ L.Map.BorderPan = L.Handler.extend({
     initialize: function (map) {
         this._map = map;
 
-        this._setPanOffset(map.options.borderPanOffset);
     },
 
     addHooks: function () {
@@ -27,27 +27,26 @@ L.Map.BorderPan = L.Handler.extend({
 
     _onClick: function (evt) {
         var map = this._map;
+        var border = map.options.borderWidth;
+        var pan = map.options.borderPanOffset;
 
         var point = new L.Point(0, 0);
         var mapsize = map.getSize();
 
-        if (evt.containerPoint.x > (mapsize.x - 50)) {
-            point.x = map.options.borderPanOffset;
-        } else if (evt.containerPoint.x < 50) {
-            point.x = -map.options.borderPanOffset;
+        if (evt.containerPoint.x > (mapsize.x - border)) {
+            point.x = pan;
+        } else if (evt.containerPoint.x < border) {
+            point.x = -pan;
         }
 
-        if (evt.containerPoint.y > (mapsize.y - 50)) {
-            point.y = map.options.borderPanOffset;
-        } else if (evt.containerPoint.y < 50) {
-            point.y = -map.options.borderPanOffset;
+        if (evt.containerPoint.y > (mapsize.y - border)) {
+            point.y = pan;
+        } else if (evt.containerPoint.y < border) {
+            point.y = -pan;
         }
 
         map.panBy(point);
         L.DomEvent.stop(evt);
-    },
-
-    _setPanOffset: function (pan) {
     },
 
 });

@@ -23,7 +23,7 @@
 	<div id="map"></div>
 
 	<script type="text/javascript">
-		var map = new L.Map('map');
+		var map = new L.Map('map', {borderpan: true, borderPanOffset: 300, borderWidth: 100});
 
 		var url = 'http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpeg',
 			attr ='Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Map data {attribution.OpenStreetMap}',
