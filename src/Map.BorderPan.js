@@ -3,7 +3,7 @@
  */
 
 L.Map.mergeOptions({
-    borderpan: true,
+    borderPan: true,
     borderPanOffset: 300,
     borderWidth: 50
 });
@@ -51,4 +51,4 @@ L.Map.BorderPan = L.Handler.extend({
 
 });
 
-L.Map.addInitHook('addHandler', 'borderpan', L.Map.BorderPan);
+L.Map.addInitHook('addHandler', 'borderPan', L.Map.BorderPan);
