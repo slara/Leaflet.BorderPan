@@ -1,9 +1,8 @@
-
 # Leaflet.BorderPan
 
 A [Leaflet](leafletjs.com) plugin to Pan on border `click` event. It's useful when Dragging is not available (Some embedded systems with resistive touchscreen). [Demo](http://slara.github.io/Leaflet.BorderPan/examples/demo.html).
 
-*Tested with Leaflet 0.6.2*
+*Tested with Leaflet 0.4.1, 0.5.1 and 0.6.2*
 
 
 ### Usage
