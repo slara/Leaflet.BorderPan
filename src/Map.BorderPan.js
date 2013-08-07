@@ -33,17 +33,25 @@ L.Map.BorderPan = L.Handler.extend({
         var point = new L.Point(0, 0);
         var mapsize = map.getSize();
 
-        if((evt.containerPoint.x/evt.containerPoint.y) >= (mapsize.x/mapsize.y)) {
-            if((mapsize.y-evt.containerPoint.y)/(evt.containerPoint.x) >= (mapsize.x/mapsize.y)) {
-                point.y = -pan;
-            } else{
-                point.x = pan;
+        if ((evt.containerPoint.x/evt.containerPoint.y) >= (mapsize.x/mapsize.y)) {
+            if ((mapsize.y-evt.containerPoint.y)/(evt.containerPoint.x) >= (mapsize.y/mapsize.x)) {
+                if (evt.containerPoint.y < border) {
+                    point.y = -pan;
+                }
+            } else {
+                if (evt.containerPoint.x > (mapsize.x - border)) {
+                    point.x = pan;
+                }
             }
-        } else{
-            if((mapsize.y-evt.containerPoint.y)/(evt.containerPoint.x) >= (mapsize.x/mapsize.y)) {
-                point.x = -pan;
-            } else{
-                point.y = pan;
+        } else {
+            if ((mapsize.y-evt.containerPoint.y)/(evt.containerPoint.x) >= (mapsize.y/mapsize.x)) {
+                if (evt.containerPoint.x < border) {
+                    point.x = -pan;
+                }
+            } else {
+                if (evt.containerPoint.y > (mapsize.y - border)) {
+                    point.y = pan;
+                }
             }
         }
 
