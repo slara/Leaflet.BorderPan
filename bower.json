@@ -1,0 +1,22 @@
+{
+  "name": "leaflet-border-pan",
+  "description": "A Leaflet plugin to Pan on border click event.",
+  "main": [
+    "Map.BorderPan.js"
+    ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+  ],
+  "authors": [
+    "Sebastian Lara Menares"
+  ],
+   "license": "MIT",
+   "homepage": "https://github.com/slara/Leaflet.BorderPan",
+   "repository": {
+     "type": "git",
+     "url": "git+https://github.com/slara/Leaflet.BorderPan.git"
+   }
+}
